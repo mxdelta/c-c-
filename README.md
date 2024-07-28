@@ -1,5 +1,7 @@
 # c-c-
-
+ 
+ regsrv32 payload.dll (pfgecrftv dll)
+ 
 -static     компиляция со всеми билиотеками во внутрь
 
 Cоздание dll
