@@ -13,8 +13,11 @@ x86_64-w64-mingw32-gcc-win32 shell.c -shared -lws2_32 -o VerifyThemeVersion.dll
 x86_64-w64-mingw32-gcc xll.c -shared -o test.xll
 
 # сщздание exe на с++
+	sudo apt update && sudo apt install g++ -y
 
-	x86_64-w64-mingw32-gcc main.c -o shell.exe
+	g++ --version
+	x86_64-w64-mingw32-g++ main.cpp -o shell.exe
+	C++	g++	g++ file.cpp -o file	./file
 
 python3 -m pefile exports VerifyThemeVersion.dll (скажет что за функции находятся внутри)
 
@@ -158,7 +161,7 @@ return TRUE;
 
 
 x86_64-w64-mingw32-gcc-win32 script.c -o 7-zip64.dll -shared
-
+gcc file.c -o file.exe	./file.exe
 
 -----------------------------------------
 # Компиляция C# из линукс
@@ -166,7 +169,13 @@ x86_64-w64-mingw32-gcc-win32 script.c -o 7-zip64.dll -shared
 sudo apt install mono-devel
 
 mcs -target:library -out:Shell.dll Shell.cs
+C# (.NET)	mcs	mcs file.cs -out:file.exe	file.exe
 
-# Компиляция CS
+# Компиляция C#
 	и активация webdav https://gist.githubusercontent.com/klezVirus/af004842a73779e1d03d47e041115797/raw/29747c92ca04c844223d1ef6c1463d7e34e271ee/EtwStartWebClient.cs
 	mcs startweb.cs /unsafe -out:start.exe
+
+
+
+
+C# (Standalone)	dotnet	dotnet publish -c Release -r linux-x64 --self-contained true -o output	./output/file
