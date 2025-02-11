@@ -159,23 +159,18 @@ case DLL_PROCESS_ATTACH:
 return TRUE;
 }
 
-
-x86_64-w64-mingw32-gcc-win32 script.c -o 7-zip64.dll -shared
-gcc file.c -o file.exe	./file.exe
+# Компиляция C из линукс
+	x86_64-w64-mingw32-gcc-win32 script.c -o 7-zip64.dll -shared
+	gcc file.c -o file.exe	./file.exe
 
 -----------------------------------------
 # Компиляция C# из линукс
 
-sudo apt install mono-devel
+	sudo apt install mono-devel
 
-mcs -target:library -out:Shell.dll Shell.cs
-C# (.NET)	mcs	mcs file.cs -out:file.exe	file.exe
+	mcs -target:library -out:Shell.dll Shell.cs
+	mcs file.cs -out:file.exe	
 
-# Компиляция C#
 	и активация webdav https://gist.githubusercontent.com/klezVirus/af004842a73779e1d03d47e041115797/raw/29747c92ca04c844223d1ef6c1463d7e34e271ee/EtwStartWebClient.cs
 	mcs startweb.cs /unsafe -out:start.exe
 
-
-
-
-C# (Standalone)	dotnet	dotnet publish -c Release -r linux-x64 --self-contained true -o output	./output/file
